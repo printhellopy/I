@@ -1,0 +1,21 @@
+int IRSensor=7;
+void setup()
+{
+pinMode(7,INPUT);
+Serial.begin(9600);
+}
+void loop()
+{
+int sensordata=digitalRead(IRSensor);
+if(sensordata==0)
+{
+Serial.println(“Stop..Something is ahead”);
+Serial.println(sensordata);
+}
+else
+{
+Serial.println(“Path is Clear”);
+Serial.println(sensordata);
+delay(2000);
+}
+}
